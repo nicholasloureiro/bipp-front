@@ -24,9 +24,18 @@ st.markdown("""
         max-width: none;
     }
     
-    /* Hide default sidebar elements */
-    .css-1d391kg {
+    /* Ensure sidebar is accessible */
+    [data-testid="stSidebar"] {
+        z-index: 999999 !important;
+    }
+    
+    [data-testid="stSidebar"] > div {
         padding-top: 1rem;
+    }
+    
+    /* Make sure sidebar toggle is clickable */
+    [data-testid="collapsedControl"] {
+        z-index: 999999 !important;
     }
     
     /* Sidebar styling */
