@@ -14,75 +14,16 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-# Minimalist CSS
+# Minimal CSS - avoiding sidebar interference
 st.markdown("""
 <style>
-    /* Global styles */
+    /* Main content styling only */
     .main .block-container {
         padding-top: 2rem;
         padding-bottom: 2rem;
         max-width: none;
     }
     
-    /* Ensure sidebar is accessible */
-    [data-testid="stSidebar"] {
-        z-index: 999999 !important;
-    }
-    
-    [data-testid="stSidebar"] > div {
-        padding-top: 1rem;
-    }
-    
-    /* Make sure sidebar toggle is always clickable */
-    [data-testid="collapsedControl"] {
-        z-index: 999999 !important;
-        position: relative !important;
-        pointer-events: auto !important;
-    }
-    
-    /* Ensure sidebar toggle button is visible and accessible */
-    button[data-testid="baseButton-header"] {
-        z-index: 999999 !important;
-        position: relative !important;
-        pointer-events: auto !important;
-    }
-    
-    /* Make sure the header area doesn't block the toggle */
-    [data-testid="stHeader"] {
-        z-index: 1 !important;
-    }
-    
-    /* Additional fallback for sidebar controls */
-    .css-1rs6os, .css-17eq0hr {
-        z-index: 999999 !important;
-        pointer-events: auto !important;
-    }
-    
-    /* Sidebar styling */
-    .sidebar-content {
-        padding: 1rem 0;
-    }
-    
-    .sidebar-section {
-        margin-bottom: 2rem;
-        padding-bottom: 1rem;
-        border-bottom: 1px solid #f0f0f0;
-    }
-    
-    .sidebar-section:last-child {
-        border-bottom: none;
-    }
-    
-    .sidebar-title {
-        font-size: 0.9rem;
-        font-weight: 600;
-        color: #6c757d;
-        text-transform: uppercase;
-        letter-spacing: 0.5px;
-        margin-bottom: 0.5rem;
-    }
-    
-    /* Main content */
     .main-header {
         margin-bottom: 2rem;
         padding-bottom: 1rem;
@@ -174,85 +115,33 @@ st.markdown("""
         font-style: italic;
     }
     
-    /* Session list styling */
-    .session-item {
-        padding: 0.5rem;
-        border-radius: 4px;
-        margin-bottom: 0.25rem;
-        cursor: pointer;
-        border: 1px solid transparent;
-        transition: all 0.2s ease;
+    /* Minimal sidebar styling - no interference */
+    .sidebar-content {
+        padding: 1rem 0;
     }
     
-    .session-item:hover {
-        background-color: #f8f9fa;
-        border-color: #dee2e6;
+    .sidebar-section {
+        margin-bottom: 2rem;
+        padding-bottom: 1rem;
+        border-bottom: 1px solid #f0f0f0;
     }
     
-    .session-item.active {
-        background-color: #e3f2fd;
-        border-color: #2196f3;
+    .sidebar-section:last-child {
+        border-bottom: none;
     }
     
-    .session-name {
-        font-weight: 500;
+    .sidebar-title {
         font-size: 0.9rem;
-        color: #495057;
-    }
-    
-    .session-id {
-        font-size: 0.75rem;
+        font-weight: 600;
         color: #6c757d;
-        margin-top: 0.25rem;
-    }
-    
-    /* Button styling */
-    .stButton > button {
-        width: 100%;
-        border-radius: 4px;
-        border: 1px solid #dee2e6;
-        background-color: #ffffff;
-        color: #495057;
-        font-weight: 400;
-        transition: all 0.2s ease;
-    }
-    
-    .stButton > button:hover {
-        border-color: #2196f3;
-        color: #2196f3;
-        background-color: #f8f9fa;
-    }
-    
-    /* Input styling */
-    .stSelectbox > div > div {
-        background-color: #ffffff;
-        border: 1px solid #dee2e6;
-        border-radius: 4px;
-    }
-    
-    .stTextInput > div > div > input {
-        border: 1px solid #dee2e6;
-        border-radius: 4px;
-        background-color: #ffffff;
-    }
-    
-    /* Remove extra spacing */
-    .element-container {
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
         margin-bottom: 0.5rem;
     }
     
-    /* Chat message styling */
-    .stChatMessage {
-        padding: 0.75rem;
-        margin-bottom: 0.5rem;
-        border-radius: 6px;
-        border: 1px solid #f0f0f0;
-    }
-    
-    /* Hide Streamlit branding */
+    /* Hide Streamlit branding only */
     #MainMenu {visibility: hidden;}
     footer {visibility: hidden;}
-    header {visibility: hidden;}
 </style>
 """, unsafe_allow_html=True)
 
