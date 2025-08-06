@@ -33,9 +33,29 @@ st.markdown("""
         padding-top: 1rem;
     }
     
-    /* Make sure sidebar toggle is clickable */
+    /* Make sure sidebar toggle is always clickable */
     [data-testid="collapsedControl"] {
         z-index: 999999 !important;
+        position: relative !important;
+        pointer-events: auto !important;
+    }
+    
+    /* Ensure sidebar toggle button is visible and accessible */
+    button[data-testid="baseButton-header"] {
+        z-index: 999999 !important;
+        position: relative !important;
+        pointer-events: auto !important;
+    }
+    
+    /* Make sure the header area doesn't block the toggle */
+    [data-testid="stHeader"] {
+        z-index: 1 !important;
+    }
+    
+    /* Additional fallback for sidebar controls */
+    .css-1rs6os, .css-17eq0hr {
+        z-index: 999999 !important;
+        pointer-events: auto !important;
     }
     
     /* Sidebar styling */
